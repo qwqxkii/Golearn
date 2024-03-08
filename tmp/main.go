@@ -1,20 +1,42 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
-	fmt.Println("环境测试")
-	//&取地址符    *根据地址取值
-	var qwq int = 20
-	var fuvk string = "张飞"
-	fmt.Printf("%T,%T,%v,%v \n", qwq, fuvk, qwq, fuvk)
-	q1 := &qwq
-	f1 := &fuvk
-	//根据&取地址，取到内存的地址，相当于门牌号
-	fmt.Printf("%p,%p\n", q1, f1)
+	demo()
+}
+func demo() {
+	//创建一个map
+	var m1 = make(map[int]string)
+	//给map的key和value赋值
+	m1[4] = "张飞"
+	m1[2] = "老王"
+	m1[3] = "网布"
+	m1[1] = "张牛"
+	//创建一个空int切片
+	s1 := make([]int, len(m1))
+	//创建一个索引
+	index := 0
+	//循环将map的key赋值到切片中
+	for i, _ := range m1 {
+		s1[index] = i //把map扔进[]int切片中
+		index++
+	}
+	//输出看看
+	fmt.Println(s1, "---")
+	//切片排序&输出看看
+	sort.Ints(s1)
+	fmt.Println(s1)
+	//循环输出5次-验证
+	for i := 0; i <= 4; i++ {
+		for _, qwq := range s1 {
+			fmt.Printf("key %d value %s\n", qwq, m1[qwq]) //自然用切片输出
 
-	//根据地址取值
-	q2 := *q1
-	fmt.Printf("%T,%v", q2, q2)
+		}
+		println("-------")
+	}
 
 }
