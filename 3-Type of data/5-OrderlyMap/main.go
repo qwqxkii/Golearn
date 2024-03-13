@@ -6,32 +6,39 @@ import (
 )
 
 func main() {
-	MapOrder()
+	ordermap()
 }
-func MapOrder() {
-	var m1 = make(map[int]string)
+func ordermap() {
+	//创建一个map
+	var m1 = make(map[int]string, 4)
+	//给map赋值
+	m1[1] = "one"
+	m1[0] = "zero"
+	m1[2] = "two"
+	m1[3] = "three"
 
-	m1[2] = "小屋"
-	m1[5] = "小三"
-	m1[1] = "异性"
-	m1[3] = "学习"
-	m1[4] = "高级"
-
-	var s1 = make([]int, len(m1))
-	var index = int(0)
-
+	fmt.Println(m1)
+	//创建一个slice用于存放map的key用于排序
+	s1 := make([]int, len(m1))
+	//创建一个索引
+	index := 0
 	for i, _ := range m1 {
 		s1[index] = i
 		index++
 	}
-
-	sort.Ints(s1)
 	fmt.Println(s1)
 
-	for i := 1; i < len(s1); i++ {
-		for _, q := range s1 {
-			fmt.Printf("key %d value %s\n", q, m1[q])
+	//排序
+	sort.Ints(s1)
+	//打印出来
+	fmt.Println(s1)
+
+	//循环五次用于验证
+	for q := 0; q < 4; q++ {
+		//当然要循环输出
+		for _, value := range s1 {
+			fmt.Printf("id :%d, value:%s\n", value, m1[value])
 		}
-		fmt.Println(i + 1)
+		fmt.Println("第", q+1)
 	}
 }
