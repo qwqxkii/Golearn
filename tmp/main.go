@@ -2,22 +2,18 @@ package main
 
 import "fmt"
 
-func MaxMin(a, b, c int) (max, min int) {
-	max = a
-	min = a
-	if b > max {
-		max = b
-	} else if b < max {
-		min = b
+func bibao() func() int {
+	i := 0
+	return func() int {
+		i++
+		return i
 	}
-	if c > max {
-		max = c
-	} else if c < max {
-		min = c
-	}
-	return max, min
 }
 func main() {
-	f1, f2 := MaxMin(100, 200, 300)
-	fmt.Printf("最大值%d，最小值%d\n", f1, f2)
+	bi := bibao()
+	fmt.Println(bi())
+	for i := 1; i < 5; i++ {
+		fmt.Println(i, bi())
+	}
+
 }
