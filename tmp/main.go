@@ -2,18 +2,13 @@ package main
 
 import "fmt"
 
-func bibao() func() int {
-	i := 0
-	return func() int {
-		i++
-		return i
-	}
-}
 func main() {
-	bi := bibao()
-	fmt.Println(bi())
-	for i := 1; i < 5; i++ {
-		fmt.Println(i, bi())
+	//闭包
+	f1 := Closure("小九")
+	fmt.Println(f1())
+}
+func Closure(name string) func() string {
+	return func() string {
+		return name
 	}
-
 }
