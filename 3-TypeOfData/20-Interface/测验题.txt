@@ -1,0 +1,23 @@
+请看以下三个接口的简单测试题：
+
+接口：Animal
+type Animal interface {
+    Speak() string
+}
+接口：Shape
+type Shape interface {
+    Area() float64
+}
+接口：Writer
+type Writer interface {
+    Write(data string) error
+}
+现在我们来考验你，尝试完成以下三个测试题：
+
+创建一个结构体实现 Animal 接口，实现 Speak() 方法并返回字符串 "Meow"，然后调用 Speak() 方法并输出结果。
+
+创建一个结构体实现 Shape 接口，实现 Area() 方法计算一个正方形的面积，并返回结果，然后调用 Area() 方法并输出结果。
+
+创建一个结构体实现 Writer 接口，实现 Write() 方法将传入的字符串打印到控制台，并返回 nil，然后调用 Write() 方法并检查是否有错误。
+
+完成以上测试题后，请将你的代码贴在下方，让我们一起看看你的答案吧！祝你好运！
