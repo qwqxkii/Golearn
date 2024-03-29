@@ -2,13 +2,19 @@ package main
 
 import "fmt"
 
-func main() {
-	//闭包
-	f1 := Closure("小九")
-	fmt.Println(f1())
+// 定义一个名为Shaper的接口，它包含一个名为Area()的方法，该方法返回float64类型的值。
+type Shaper interface {
+	Area() float64
 }
-func Closure(name string) func() string {
-	return func() string {
-		return name
-	}
+type God struct {
+}
+
+func (g *God) Area() float64 {
+	return float64(222)
+}
+
+func main() {
+	g := &God{}
+	a := g.Area()
+	fmt.Println(a)
 }
