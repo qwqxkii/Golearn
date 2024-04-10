@@ -4,6 +4,7 @@ import "fmt"
 
 func main() {
 	panicdemo()
+	panicdemo2()
 }
 
 // 主动出触发
@@ -15,7 +16,7 @@ func panicdemo() {
 func panicdemo2() {
 	fmt.Println("不能除以0")
 	n := 5
-	println(n / 0)
+	println(n / 2) //0 err
 	//# learn/3-TypeOfData/14-panic
 	//	.\main.go:18:14: invalid operation: division by zero
 }

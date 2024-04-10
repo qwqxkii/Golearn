@@ -1,0 +1,15 @@
+好的，这里有几道需要编写代码来完成的测试题：
+
+创建和启动一个Goroutine
+编写一个Go程序，在一个新的Goroutine中打印出"Hello, Goroutine!"。
+
+使用Goroutine和Channel通信
+创建两个Goroutine：一个发送当前时间的字符串到一个Channel，另一个从该Channel接收这个字符串并打印出来。
+
+使用WaitGroup等待Goroutines完成
+编写一个Go程序，启动三个Goroutine，每个都在等待随机的时间后打印出其编号（1、2或3）。主程序应使用sync.WaitGroup来等待所有Goroutine完成后再退出。
+
+设置GOMAXPROCS并观察行为变化
+编写一个Go程序，它并发地启动一定数量的Goroutine，每个Goroutine都打印出其编号。尝试更改runtime.GOMAXPROCS()的值，并观察和记录程序的行为变化。
+
+这些问题旨在帮助理解Goroutines的基本概念，包括如何创建和同步它们，以及如何使用Channels进行通信。
